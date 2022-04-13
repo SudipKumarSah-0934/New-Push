@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottomSheetCons"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:padding="10dp">
+
+        <TextView
+            android:id="@+id/resultsTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:fontFamily="@font/orbitron"
+            android:gravity="center"
+            android:text="Your Results"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Score view divider -->
+        <ImageView
+            android:id="@+id/buttomSheetScoreViewBackground"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="144dp"
+            android:contentDescription="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/button_rounded" />
+
+        <View
+            android:id="@+id/scoreViewDivider"
+            style="@style/HorizontalDivider"
+            android:layout_width="100dp"
+            android:layout_height="4dp"
+            android:background="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/buttomSheetScoreViewBackground"
+            app:layout_constraintEnd_toEndOf="@+id/buttomSheetScoreViewBackground"
+            app:layout_constraintStart_toStartOf="@+id/buttomSheetScoreViewBackground"
+            app:layout_constraintTop_toTopOf="@+id/buttomSheetScoreViewBackground" />
+
+        <!-- Score view display -->
+        <TextView
+            android:id="@+id/scoreTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/scoreViewDivider"
+            app:layout_constraintEnd_toEndOf="@+id/buttomSheetScoreViewBackground"
+            app:layout_constraintStart_toStartOf="@id/buttomSheetScoreViewBackground" />
+
+        <!-- Total Score view display -->
+        <TextView
+            android:id="@+id/scoreTotalTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:gravity="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/buttomSheetScoreViewBackground"
+            app:layout_constraintStart_toStartOf="@id/buttomSheetScoreViewBackground"
+            app:layout_constraintTop_toBottomOf="@+id/scoreViewDivider" />
+
+        <Button
+            android:id="@+id/viewResultsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Answers"
+            android:layout_margin="20dp"
+            android:fontFamily="@font/orbitron"
+            android:background="@drawable/button_rounded"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/scoreTotalTextView"  />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

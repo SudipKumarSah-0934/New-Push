@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/restartButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/button_rounded"
+        android:text="Restart Quiz"
+        android:onClick="startQuiz"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Score view background -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/restartButton"
+        app:layout_constraintStart_toStartOf="@+id/restartButton"
+        app:layout_constraintTop_toBottomOf="@+id/restartButton" />
+
+    <ImageView
+        android:id="@+id/scoreViewBackground"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="30dp"
+        android:contentDescription="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/button_rounded" />
+
+    <!-- Score view divider -->
+    <View
+        android:id="@+id/scoreViewDivider"
+        style="@style/HorizontalDivider"
+        android:layout_width="100dp"
+        android:layout_height="4dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/scoreViewBackground"
+        app:layout_constraintEnd_toEndOf="@+id/scoreViewBackground"
+        app:layout_constraintStart_toStartOf="@+id/scoreViewBackground"
+        app:layout_constraintTop_toTopOf="@+id/scoreViewBackground" />
+
+    <!-- Score view display -->
+    <TextView
+        android:id="@+id/scoreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/scoreViewDivider"
+        app:layout_constraintEnd_toEndOf="@+id/scoreViewBackground"
+        app:layout_constraintStart_toStartOf="@id/scoreViewBackground" />
+
+    <!-- Total Score view display -->
+    <TextView
+        android:id="@+id/scoreTotalTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/scoreViewBackground"
+        app:layout_constraintStart_toStartOf="@id/scoreViewBackground"
+        app:layout_constraintTop_toBottomOf="@+id/scoreViewDivider" />
+
+    <!-- Well done view display -->
+    <ImageView
+        android:id="@+id/wellDoneImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="30dp"
+        android:contentDescription="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scoreViewBackground"
+        app:srcCompat="@drawable/well_done" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
